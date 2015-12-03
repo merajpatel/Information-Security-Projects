@@ -24,7 +24,6 @@ class WebServer:
 		print "Connection Recieved form: " + "IP: " + str(clientAddr[0]) + "port:" + str(clientAddr[1])
         	try:
 			data = clientFD.recv(2048)
-			self.logfile(data)      
         		filename = data.split()[1]
 			print "file name is:" + filename
 			if filename[1:].find("/") == -1:
@@ -42,12 +41,6 @@ class WebServer:
                         </html>
                         """)
                         clientFD.close()
-	def logfile(self, data):
-		print data
-		logfile = open("log.txt", "a")
-		logfile.write("\n")
-		logfile.write(data)
-		logfile.close()
 	
 	def displayDir(self, dirname, clientFD):
 		try:
