@@ -1,0 +1,11 @@
+module P2P {
+interface ClientRequest {
+	string addFile(in string fileName, in string ip, in string port);
+	string removeFile(in string fileName, in string ip, in string port);
+	string searchFile(in string fileName);
+	string viewAllFiles();
+	string downloadFile(in string fileName);
+	string clearUploads(in string ip, in string port);
+};
+};
+
